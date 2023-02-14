@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from AppE03.models import Curso
+from AppE03.models import Profesor
+from AppE03.models import Estudiante
+from AppE03.models import Entregable
 '''
-from AppC.models import Curso
-from AppC.models import Profesor
-from AppC.models import Estudiante
-from AppC.models import Entregable
 from AppC.forms import CursoFormulario
 from AppC.forms import ProfesoresFormulario
 from AppC.forms import EstudiantesFormulario
@@ -15,7 +15,7 @@ from AppC.forms import EntregableFormulario
 
 def inicio(request):
     
-    return render(request, "AppC/inicio.html", )
+    return render(request, "AppE03/inicio.html", )
     #return HttpResponse('Vista Inicio')
 
 def cursos(request):
@@ -35,7 +35,7 @@ def cursos(request):
         
     return render(request, 'AppC/cursos.html',{"miFormulario": miFormulario})
     '''
-    return render(request, 'AppC/inicio.html')
+    return render(request, 'AppE03/inicio.html')
     #return HttpResponse('Vista cursos')
 
 def profesores(request):
@@ -55,7 +55,7 @@ def profesores(request):
         
     return render(request, 'AppC/profesores.html',{"miFormulario": miFormulario})
     '''
-    return render(request, 'AppC/profesores.html')
+    return render(request, 'AppE03/profesores.html')
     #return HttpResponse('Vista profesores')
 
 
@@ -77,7 +77,7 @@ def estudiantes(request):
 
     return render(request, 'AppC/estudiantes.html',{"miFormulario": miFormulario})
     '''
-    return render(request, 'AppC/estudiantes.html')
+    return render(request, 'AppE03/estudiantes.html')
     #return HttpResponse('Vista estudiantes')
 
 def entregables(request):
@@ -97,5 +97,5 @@ def entregables(request):
 
     return render(request, 'AppC/entregables.html',{"miFormulario": miFormulario})
     '''
-    return render(request, 'AppC/entregables.html')
+    return render(request, 'AppE03/entregables.html')
     #return HttpResponse('Vista entregables')
