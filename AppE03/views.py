@@ -43,7 +43,7 @@ def profesores(request):
  
         if miFormulario.is_valid:
             informacion = miFormulario.cleaned_data
-            profesor = Profesor(nombre=informacion["nombre"], apellido=informacion["apellido"],email = informacion["e-mail"], profesion = informacion['profesion'])
+            profesor = Profesor(nombre=informacion["nombre"], apellido=informacion["apellido"],email=informacion["email"], profesion=informacion["profesion"])
             profesor.save()
         return render(request, "AppE03/profesores.html" ) #ubicacion a donde me lleva
     else:
@@ -59,7 +59,7 @@ def estudiantes(request):
  
         if miFormulario.is_valid:
             informacion = miFormulario.cleaned_data
-            estudiante = Estudiante(nombre=informacion["nombre"], apellido=informacion["apellido"],email = informacion["e-mail"])
+            estudiante = Estudiante(nombre=informacion["nombre"], apellido=informacion["apellido"],email=informacion["email"])
             estudiante.save()
         return render(request, "AppE03/estudiantes.html" ) #ubicacion a donde me lleva
     else:
@@ -77,7 +77,7 @@ def entregables(request):
  
         if miFormulario.is_valid:
             informacion = miFormulario.cleaned_data
-            entregable = Entregable (nombre=informacion["nombre"],apellido=informacion["apellido"],email = informacion["e-mail"], fechadeentrega=informacion["Fecha de entrega"],entregado = informacion["entregado"])
+            entregable = Entregable (nombre=informacion["nombre"],apellido=informacion["apellido"],email=informacion["email"], fechaEntrega=informacion["fechaEntrega"],entregado=informacion["entregado"])
             entregable.save()
         return render(request, "AppE03/entregables.html" ) #ubicacion a donde me lleva
     else:
