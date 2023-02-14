@@ -1,2 +1,2 @@
 -- SQLite
-SELECT * from AppE03_curso
+SELECT * from AppE03_estudiante

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from AppE03.models import Curso
 from AppE03.models import Profesor
@@ -15,9 +15,7 @@ from AppE03.forms import EntregableFormulario
 def inicio(request):
     return render(request, "AppE03/inicio.html", )
     
-
 def cursos(request):
-
     if request.method == "POST":
  
         miFormulario = CursoFormulario(request.POST) # Aqui me llega la informacion del html
@@ -32,7 +30,7 @@ def cursos(request):
         miFormulario = CursoFormulario()
         
     return render(request, 'AppE03/cursos.html',{"miFormulario": miFormulario})
-    
+
 
 def profesores(request):
     
