@@ -18,6 +18,6 @@ class EntregableFormulario(forms.Form):
     nombre = forms.CharField(max_length=40, required=True, widget=forms.TextInput(attrs={'placeholder': 'Nombre'})) 
     apellido = forms.CharField(max_length=40, required=True, widget=forms.TextInput(attrs={'placeholder': 'Apellido'})) 
     email = forms.EmailField(max_length=40, required=True, widget=forms.TextInput(attrs={'placeholder': 'Email'}))
-    fechaEntrega = forms.DateTimeField(required=True, widget=forms.TextInput(attrs={'placeholder': '14-02-2023'}))
+    fechaEntrega = forms.DateTimeField(required=True, widget=forms.TextInput(attrs={'placeholder': '2023-02-14'}))
     entregado = forms.BooleanField()
 
