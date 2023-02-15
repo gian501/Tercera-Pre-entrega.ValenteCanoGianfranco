@@ -83,3 +83,16 @@ def entregables(request):
 
     return render(request, 'AppE03/entregables.html',{"miFormulario": miFormulario})
 
+def busquedaComision(request):
+    return render(request, "AppE03/busquedaComision.html" )
+
+def buscar(request):
+    if request.GET['comision']:
+        comision= request.GET['comision']
+        cursos = Curso.objects.filter(comision__icontains=comision)
+        return render(request, "AppE03/resultadoBusqueda.html", {"cursos":cursos, "comision":comision})
+    else:
+        respuesta = "No enviaste datos"
+    
+    #return render(request, 'AppC/inicio.html',{"respuesta": respuesta})
+    return HttpResponse(respuesta)
