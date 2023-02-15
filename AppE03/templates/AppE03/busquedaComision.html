@@ -1,9 +1,10 @@
 {% extends "AppE03/padre.html" %}
     {% load static %}
 {% block contenidoQueCambia %}
-
+<h2>Busqueda: </h2>
 <form action="/AppE03/buscar/" method="GET">
-    <input type="number" name="comision" id="comision">
+    <label>Comision Nº</lable>
+    <input type="number" name="comision" id="comision" placeholder="Nº Comision">
     <input type="submit" value="Buscar">
 
 </form>

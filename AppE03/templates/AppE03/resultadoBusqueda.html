@@ -2,15 +2,15 @@
     {% load static %}
 {% block contenidoQueCambia %}
 
-
-<p>Estamos buscando el: {{comision}}</p>
+<h2>Resultado:</h2>
+<p>Estamos buscando la Comision Nº: {{comision}}</p>
 
 {% if cursos %}
 
 <ul>
  {% for curso in cursos %}
-     <li>{{curso.nombre}}</li>
-     <li>{{curso.comision}}</li>
+     <li>Curso: {{curso.nombre}}</li>
+     <li>Comision Nº: {{curso.comision}}</li>
  {% endfor %}
 
 
