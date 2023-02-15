@@ -1,3 +1,8 @@
+{% extends "AppE03/padre.html" %}
+    {% load static %}
+{% block contenidoQueCambia %}
+
+
 <p>Estamos buscando el: {{comision}}</p>
 
 {% if cursos %}
@@ -16,3 +21,5 @@
 {% endif %}
 
 <p style="color: red;">{{respuesta}}</p>
+
+{% endblock %}

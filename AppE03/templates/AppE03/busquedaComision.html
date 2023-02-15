@@ -1,5 +1,11 @@
+{% extends "AppE03/padre.html" %}
+    {% load static %}
+{% block contenidoQueCambia %}
+
 <form action="/AppE03/buscar/" method="GET">
     <input type="number" name="comision" id="comision">
     <input type="submit" value="Buscar">
 
 </form>
+
+{% endblock %}
