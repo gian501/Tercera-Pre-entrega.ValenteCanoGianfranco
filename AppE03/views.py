@@ -25,63 +25,65 @@ def cursos(request):
             informacion = miFormulario.cleaned_data
             curso = Curso(nombre=informacion["curso"], comision=informacion["comision"])
             curso.save()
-            return render(request, "AppE03/cursos.html" ) #ubicacion a donde me lleva
+            #return render(request, "AppE03/cursos.html") #ubicacion a donde me lleva
+            return render(request, "AppE03/inicio.html")
     else:
         miFormulario = CursoFormulario()
         
-    return render(request, 'AppE03/cursos.html',{"miFormulario": miFormulario})
+    return render(request, 'AppE03/cursos.html', {"miFormulario":miFormulario})
 
 
 def profesores(request):
-    
     if request.method == "POST":
  
-        miFormulario = ProfesoresFormulario(request.POST) # Aqui me llega la informacion del html
+        miFormulario = ProfesoresFormulario(request.POST) 
         print(miFormulario)
  
         if miFormulario.is_valid:
             informacion = miFormulario.cleaned_data
             profesor = Profesor(nombre=informacion["nombre"], apellido=informacion["apellido"],email=informacion["email"], profesion=informacion["profesion"])
             profesor.save()
-        return render(request, "AppE03/profesores.html" ) #ubicacion a donde me lleva
+            #return render(request, "AppE03/profesores.html" )
+            return render(request, "AppE03/inicio.html")       
     else:
         miFormulario = ProfesoresFormulario()
         
-    return render(request, 'AppE03/profesores.html',{"miFormulario": miFormulario})
+    return render(request, 'AppE03/profesores.html', {"miFormulario":miFormulario})
 
 def estudiantes(request):
     if request.method == "POST":
  
-        miFormulario = EstudiantesFormulario(request.POST) # Aqui me llega la informacion del html
+        miFormulario = EstudiantesFormulario(request.POST) 
         print(miFormulario)
  
         if miFormulario.is_valid:
             informacion = miFormulario.cleaned_data
             estudiante = Estudiante(nombre=informacion["nombre"], apellido=informacion["apellido"],email=informacion["email"])
             estudiante.save()
-        return render(request, "AppE03/estudiantes.html" ) #ubicacion a donde me lleva
+            #return render(request, "AppE03/estudiantes.html" )
+            return render(request, "AppE03/inicio.html") 
     else:
         miFormulario = EstudiantesFormulario()
 
-    return render(request, 'AppE03/estudiantes.html',{"miFormulario": miFormulario})
+    return render(request, 'AppE03/estudiantes.html', {"miFormulario":miFormulario})
 
 
 def entregables(request):
-   
     if request.method == "POST":
  
-        miFormulario = EntregableFormulario(request.POST) # Aqui me llega la informacion del html
+        miFormulario = EntregableFormulario(request.POST) 
         print(miFormulario)
  
         if miFormulario.is_valid:
             informacion = miFormulario.cleaned_data
             entregable = Entregable (nombre=informacion["nombre"],apellido=informacion["apellido"],email=informacion["email"], fechaEntrega=informacion["fechaEntrega"],entregado=informacion["entregado"])
             entregable.save()
-        return render(request, "AppE03/entregables.html" ) #ubicacion a donde me lleva
+            #return render(request, "AppE03/entregables.html" )
+            return render(request, "AppE03/inicio.html") 
     else:
         miFormulario = EntregableFormulario()
 
-    return render(request, 'AppE03/entregables.html',{"miFormulario": miFormulario})
+    return render(request, 'AppE03/entregables.html', {"miFormulario":miFormulario})
 
 def busquedaComision(request):
     return render(request, "AppE03/busquedaComision.html" )

@@ -2,7 +2,7 @@ from django import forms
 
 class CursoFormulario(forms.Form):
     curso = forms.CharField(required=True, widget=forms.TextInput(attrs={'placeholder': 'Curso'}))
-    comision = forms.IntegerField(required=True, widget=forms.TextInput(attrs={'placeholder': 'Comision'}))
+    comision = forms.IntegerField(required=True, widget=forms.TextInput(attrs={'placeholder': 'Comision Nº: :4444'}))
 
 class ProfesoresFormulario(forms.Form):
     nombre = forms.CharField(max_length=40, required=True, widget=forms.TextInput(attrs={'placeholder': 'Nombre'})) 
